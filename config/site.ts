@@ -1,18 +1,36 @@
-export type SiteConfig = typeof siteConfig
+export type NavItem = {
+  title: string
+  href: string
+  disabled?: boolean
+}
 
-export const siteConfig = {
-  name: "Next.js",
-  description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+export type SiteConfig = {
+  name: string
+  description: string
+  mainNav: NavItem[]
+  subLinks: NavItem[]
+}
+
+export const siteConfig: SiteConfig = {
+  name: "Dashboard app",
+  description: "A simple note taking app that uses AI to summarize your notes.",
   mainNav: [
     {
       title: "Home",
       href: "/",
     },
+    {
+      title: "Dashboard",
+      href: "/dashboard",
+    },
+    {
+      title: "invoices",
+      href: "/dashboard/invoices",
+    },
+    {
+      title: "customers",
+      href: "/dashboard/customers",
+    },
   ],
-  links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
-  },
+  subLinks: [],
 }
